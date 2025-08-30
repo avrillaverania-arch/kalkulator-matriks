@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Matrix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kalkulator Matrix</h1>
+            <p>Kalkulator untuk operasi matriks: penjumlahan, pengurangan, perkalian, determinan, dan invers</p>
+        </header>
+
+        <div class="controls">
+            <div class="matrix-size">
+                <label for="rows">Baris:</label>
+                <input type="number" id="rows" min="1" max="6" value="2">
+                <label for="cols">Kolom:</label>
+                <input type="number" id="cols" min="1" max="6" value="2">
+                <button onclick="createMatrixInputs()">Buat Matrix</button>
+            </div>
+
+            <div class="operation-select">
+                <label for="operation">Operasi:</label>
+                <select id="operation" onchange="toggleSecondMatrix()">
+                    <option value="add">Penjumlahan (A + B)</option>
+                    <option value="subtract">Pengurangan (A - B)</option>
+                    <option value="multiply">Perkalian (A × B)</option>
+                    <option value="determinant">Determinan</option>
+                    <option value="inverse">Invers</option>
+                    <option value="transpose">Transpose</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="matrices-container">
+            <div class="matrix-input" id="matrixA">
+                <h3>Matrix A</h3>
+                <div id="matrixA-inputs"></div>
+            </div>
+
+            <div class="matrix-input" id="matrixB" style="display: none;">
+                <h3>Matrix B</h3>
+                <div id="matrixB-inputs"></div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="calculate()" class="calculate-btn">Hitung</button>
+            <button onclick="clearAll()" class="clear-btn">Bersihkan</button>
+        </div>
+
+        <div class="result" id="result">
+            <h3>Hasil:</h3>
+            <div id="result-matrix"></div>
+        </div>
+
+        <div class="instructions">
+            <h3>Cara Penggunaan:</h3>
+            <ul>
+                <li>Pilih ukuran matrix (baris dan kolom)</li>
+                <li>Klik "Buat Matrix" untuk membuat input fields</li>
+                <li>Isi nilai-nilai matrix</li>
+                <li>Pilih operasi yang diinginkan</li>
+                <li>Klik "Hitung" untuk melihat hasil</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="matrix.js"></script>
+</body>
+</html>
